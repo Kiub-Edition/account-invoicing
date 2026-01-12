@@ -88,10 +88,7 @@ class AccountMove(models.Model):
             # https://github.com/odoo/odoo/blob/f82f768729d897fa54b04789f4e0637ed1bb27f4/addons/account/models/account_move.py#L1301-L1307
             domain = [
                 ("account_id", "in", pay_term_lines.account_id.ids),
-                "|",
                 ("parent_state", "=", "posted"),
-                "&",
-                ("parent_state", "=", "draft"),
                 ("partner_id", "=", move.alternate_payer_id.id),
                 ("reconciled", "=", False),
                 "|",
