@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="account.view_move_form" />
         <field name="arch" type="xml">
             <field name="partner_shipping_id" position="before">
-                <label for="alternate_payer_id" class="fw-bold" invisible="journal_id.type not in ('sale')" />
-                <div class="o_col" invisible="journal_id.type not in ('sale')">
+                <label for="alternate_payer_id" class="fw-bold" invisible="move_type not in ('out_invoice', 'out_refund')" />
+                <div class="o_col" invisible="move_type not in ('out_invoice', 'out_refund')">
                     <field name="alternate_payer_id" readonly="state != 'draft'" />
                 </div>
             </field>
